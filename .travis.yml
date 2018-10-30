@@ -16,7 +16,7 @@ after_success:
   #log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #take built images and push to DOcker hub
-  - docker push parag/multi-client
-  - docker push parag/multi-server
-  - docker push parag/multi-worker
-  - docker push parag/multi-nginx
+  - docker push parag290/multi-client
+  - docker push parag290/multi-server
+  - docker push parag290/multi-worker
+  - docker push parag290/multi-nginx
