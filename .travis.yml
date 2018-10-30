@@ -3,16 +3,16 @@ services:
   - docker
 
 before_install:
-  - docker build -t parag/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t parag290/react-test -f ./client/Dockerfile.dev ./client
   
 script:
-  - docker run parag/react-test npm test -- --coverage
+  - docker run parag290/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t parag/multi-client ./client
-  - docker build -t parag/multi-nginx ./nginx
-  - docker build -t parag/multi-server ./server
-  - docker build -t parag/multi-worker ./worker
+  - docker build -t parag290/multi-client ./client
+  - docker build -t parag290/multi-nginx ./nginx
+  - docker build -t parag290/multi-server ./server
+  - docker build -t parag290/multi-worker ./worker
   #log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #take built images and push to DOcker hub
